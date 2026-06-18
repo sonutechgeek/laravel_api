@@ -1,0 +1,16 @@
+php artisan serve
+php artisan list 
+php artisan make list
+
+php artisan make: controller:UserController
+php artisan make:seeder --help
+php artisan route:list
+php artisan about
+php artisan migrate
+php artisan tinker //ability to run the klaravel code in the terminal for the testing environmnt 
+most common use of the tinker work with the databases
+php artisan tinker
+Psy Shell v0.12.23 (PHP 8.3.31 — cli) by Justin Hileman
+New PHP manual is available (latest: 3.1.0). Update with `doc --update-manual`
+> Str::rabdon()
+= "5h1YVmdZOCLXDXCl"
