@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Api\V1;
 
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 class PostController extends Controller
@@ -30,7 +31,18 @@ class PostController extends Controller
     public function show(string $id)
     {
         //
-        return ["message"=>"show method called for post $id"];
+        // return ["message"=>"show method called"];
+        return response()->json([
+            "message"=>"show method called for post $id",
+            "post"=>[
+                "id"=>$id,
+                "title"=>"Sample Post $id",
+                "content"=>"This is the content of post $id"
+            ]
+        ])->header('Test', 'Sonuç Başarılı')
+        ->header('Content-Type', 'application/json')
+        ->setStatusCode(200);
+
     }
 
     /**
@@ -39,7 +51,7 @@ class PostController extends Controller
     public function update(Request $request, string $id)
     {
         //
-        return ["message"=>"update method called for post $id"];
+        return ["message"=>"update method called"];
     }
 
     /**
@@ -48,6 +60,6 @@ class PostController extends Controller
     public function destroy(string $id)
     {
         //
-        return ["message"=>"destroy method called for post $id"];
+        return ["message"=>"destroy method called"];
     }
 }

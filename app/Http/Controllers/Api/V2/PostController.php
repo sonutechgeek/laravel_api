@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Api\V2;
 
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 class PostController extends Controller
@@ -12,7 +13,7 @@ class PostController extends Controller
     public function index()
     {
         //
-        return ["message"=>"index method called"];
+        return ["message"=>"v2 index method called"];
     }
 
     /**
@@ -21,7 +22,7 @@ class PostController extends Controller
     public function store(Request $request)
     {
         //
-        return ["message"=>"store method called"];
+        return ["message"=>"v2 store method called"];
     }
 
     /**
@@ -30,7 +31,7 @@ class PostController extends Controller
     public function show(string $id)
     {
         //
-        return ["message"=>"show method called for post $id"];
+        return ["message"=>"v2 show method called"];
     }
 
     /**
@@ -39,7 +40,7 @@ class PostController extends Controller
     public function update(Request $request, string $id)
     {
         //
-        return ["message"=>"update method called for post $id"];
+        return ["message"=>"v2 update method called"];
     }
 
     /**
@@ -48,6 +49,6 @@ class PostController extends Controller
     public function destroy(string $id)
     {
         //
-        return ["message"=>"destroy method called for post $id"];
+        return ["message"=>"v2 destroy method called"];
     }
 }
