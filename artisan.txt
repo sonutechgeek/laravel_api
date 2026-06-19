@@ -16,3 +16,6 @@ New PHP manual is available (latest: 3.1.0). Update with `doc --update-manual`
 = "5h1YVmdZOCLXDXCl"
 cp .env.example .env && php artisan key:generate
 php artisan route:list
+
+php artisan make:model Post -m 
+m for generate the migration
