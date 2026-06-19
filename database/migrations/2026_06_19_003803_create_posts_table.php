@@ -12,11 +12,23 @@ return new class extends Migration
      */
     public function up(): void
     {
+        // without constraints 
+        // Schema::create('posts', function (Blueprint $table) {
+        //     $table->id();
+        //     $table->string("title");
+        //     $table->text("body");
+        //     $table->foreignIdFor(User::class,"author_id");
+        //     // $table->foreignId("author_id")->constrained("users")->onDelete("cascade");
+        //     // $table->foreignId("author_id")->references("users")->cascadeOnDelete();
+        //     $table->timestamps();
+        // });
         Schema::create('posts', function (Blueprint $table) {
+            $table->engine = 'InnoDB';  
             $table->id();
             $table->string("title");
             $table->text("body");
-            $table->foreignIdFor(User::class,"author_id");
+            // $table->foreignIdFor(User::class,"author_id")->constrained(); erroor
+            $table->foreignIdFor(User::class,"author_id")->constrained('users');
             // $table->foreignId("author_id")->constrained("users")->onDelete("cascade");
             // $table->foreignId("author_id")->references("users")->cascadeOnDelete();
             $table->timestamps();

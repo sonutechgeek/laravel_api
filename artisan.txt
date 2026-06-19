@@ -19,3 +19,5 @@ php artisan route:list
 
 php artisan make:model Post -m 
 m for generate the migration
+
+ php artisan migrate:rollback --step=1
